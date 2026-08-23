@@ -125,6 +125,42 @@ Available tools:
 | `oven_stop_cook` | Stop cooking and close live video |
 | `get_utc_time` | Return UTC hours, minutes, and seconds |
 
+### Claude Code and Claude Desktop
+
+The included configurator can register this local stdio server with Claude Code,
+Claude Desktop, or both. It does not copy Anova credentials into either client.
+
+Preview the changes first:
+
+```bash
+python scripts/configure_claude.py --dry-run
+```
+
+Configure both clients (Claude Code uses user scope by default):
+
+```bash
+python scripts/configure_claude.py --target both
+```
+
+Useful alternatives:
+
+```bash
+# One client only
+python scripts/configure_claude.py --target code
+python scripts/configure_claude.py --target desktop
+
+# Update an existing same-named Claude Code entry
+python scripts/configure_claude.py --target code --replace
+
+# Remove the entry from both clients
+python scripts/configure_claude.py --remove
+```
+
+Claude Desktop configuration is merged atomically, preserving other servers and
+creating a timestamped mode-0600 backup. Quit and reopen Claude Desktop afterward.
+For distributing this beyond a local checkout, Anthropic's current preferred format
+is an installable MCP Bundle (`.mcpb`).
+
 For a future Pi service, the same adapter can use Streamable HTTP:
 
 ```bash

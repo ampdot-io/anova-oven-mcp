@@ -24,11 +24,12 @@ Date: 2026-08-20 (America/Los_Angeles)
 
 ## Offline checks completed
 
-- Forty-eight tests cover Firebase token refresh/caching, exact-account Keychain access,
+- Fifty tests cover Firebase token refresh/caching, exact-account Keychain access,
   mode-0600 file credentials, command correlation and cache invalidation, v1/v2 stage
   encoding, all four sensors, camera/WHEP behavior, JPEG conversion, MCP schemas and
   image content, physical-action acknowledgements, and stop-before-camera-cleanup
-  ordering.
+  ordering. They also cover non-destructive Claude configuration previews and atomic
+  Claude Desktop configuration merging with private backups.
 - Ruff, mypy, dependency-integrity, and package-build checks pass.
 
 ## Scope and limitations
