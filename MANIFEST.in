@@ -1,0 +1,4 @@
+include VALIDATION.md
+include oven-camera-smoke.jpg
+recursive-include docs *.md
+recursive-include scripts *.py
